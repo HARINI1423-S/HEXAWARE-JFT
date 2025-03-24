@@ -21,6 +21,24 @@ CREATE TABLE Courier (
     DeliveryDate DATE
 );
 
+/*
+CREATE TABLE Courier (
+    CourierID INT PRIMARY KEY AUTO_INCREMENT,
+    SenderID INT,
+    ReceiverID INT,
+    Weight DECIMAL(5,2) NOT NULL,
+    Status VARCHAR(50) NOT NULL,
+    TrackingNumber VARCHAR(20) UNIQUE NOT NULL,
+    DeliveryDate DATE NOT NULL,
+    ServiceID INT,
+    EmployeeID INT,
+    FOREIGN KEY (SenderID) REFERENCES User(UserID),
+    FOREIGN KEY (ReceiverID) REFERENCES User(UserID),
+    FOREIGN KEY (ServiceID) REFERENCES CourierServices(ServiceID),
+    FOREIGN KEY (EmployeeID) REFERENCES EmployeeTable(EmployeeID)
+);
+*/
+
 CREATE TABLE CourierServices (
     ServiceID INT PRIMARY KEY,
     ServiceName VARCHAR(100),
